@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FM Services - Your Cart</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <!-- Header (same as index.html) -->
+  <header class="header">
+    <div class="container">
+      <div class="header-content">
+        <!-- Add this right after the header-content div opens -->
+<div class="delivery-notification" id="delivery-notification">
+  <span class="delivery-text">
+    <i class="fas fa-bolt"></i> Delivery in-<span id="delivery-time">12</span>-min
+  </span>
+  <button class="close-delivery-notification" id="close-delivery-notification">
+    <i class="fas fa-times"></i>
+  </button>
+</div>
+        <div class="logo">
+          <i class="fas fa-pills logo-icon"></i>
+          <div>
+            <div class="logo-text">FM Services <span class="availability">24x7 Available</span></div>
+            <div class="logotext">+91 7022901203</div>
+            <div class="logo-tagline">Food & Medicine Delivery</div>
+          </div>
+        </div>
+        
+        <div class="header-actions">
+          <div class="location-selector" id="location-selector">
+            <i class="fas fa-map-marker-alt"></i>
+            <span id="current-location">Select Location</span>
+          </div>
+
+          
+
+          <button class="cart-btn" id="cart-btn">
+            <i class="fas fa-shopping-cart"></i>
+            <span class="cart-count">0</span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Cart Content -->
+  <div class="container cart-container">
+    <h1 class="cart-title">Your Shopping Cart</h1>
+    
+    <div class="cart-content">
+      <div class="cart-items" id="cart-items">
+        <!-- Cart items will be loaded here -->
+      </div>
+      
+      <div class="cart-summary">
+        <h2>Order Summary</h2>
+        <div class="summary-row">
+          <span>Subtotal</span>
+          <span id="cart-subtotal">$0.00</span>
+        </div>
+        <div class="summary-row">
+          <span>Delivery Fee</span>
+          <span id="delivery-fee">₹2.99</span>
+        </div>
+        <div class="summary-row total">
+          <span>Total</span>
+          <span id="cart-total">₹0.00</span>
+        </div>
+        <button class="btn btn-primary btn-checkout" id="checkout-btn">Proceed to Checkout</button>
+        <a href="index.html" class="btn btn-continue" onclick="window.location.reload()">
+  <i class="fas fa-arrow-left"></i> Continue Shopping
+</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Update your existing order-success-modal with this -->
+<div class="modal" id="order-success-modal">
+  <div class="modal-content success-modal">
+    <div class="success-animation">
+      <svg class="checkmark" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 52 52">
+        <circle class="checkmark__circle" cx="26" cy="26" r="25" fill="none"/>
+        <path class="checkmark__check" fill="none" d="M14.1 27.2l7.1 7.2 16.7-16.8"/>
+      </svg>
+    </div>
+    <h2>Order Successful!</h2>
+    <div class="delivery-progress">
+        <div class="progress-text">Your order is on the way!</div>
+        <div class="progress-bar">
+          <div class="progress-fill"></div>
+        </div>
+      </div>
+    <p class="order-id">Order ID: <span id="order-id-display"></span></p>
+    <p class="delivery-time">
+      <i class="fas fa-clock"></i> Estimated delivery: <span id="delivery-minutes">10-12</span> minutes
+    </p>
+    <div class="order-summary">
+  <h3>Your Order Summary</h3>
+  <div id="success-order-items" class="order-items-list"></div>
+ <div>
+      <span class="summary-row"><span>Delivery-charges</span>
+       <span id="success-delivery-fee">₹0.00</span>
+    </div> 
+  <div class="summary-row total">
+    <span>Total</span>
+          <span id="success-total">₹0.00</span>
+  </div>
+  
+</div>
+    <!-- Add this delivery tracking section -->
+    <div class="delivery-tracking">
+      <div class="map-container">
+        <div class="map-route"></div>
+        <div class="route-points">
+          <div class="point restaurant">
+            <i class="fas fa-utensils"></i>
+            <span class="point-label">Restaurant</span>
+          </div>
+          <div class="point destination">
+            <i class="fas fa-home"></i>
+            <span class="point-label">Your Location</span>
+          </div>
+          <div class="delivery-bike">
+            <i class="fas fa-motorcycle"></i>
+          </div>
+        </div>
+      </div>
+      
+    </div>
+    
+    
+    </button>
+    <a href="index.html" button class="btn btn-primary" id="continue-shopping-btn">
+      <i class="fas fa-home"></i> Back to Home
+  </div>
+  
+</div>
+
+  <script src="js/products.js"></script>
+  <script src="js/constants-and-state.js"></script>
+<script src="js/ui-handlers.js"></script>
+<script src="js/core-functions.js"></script>
+</body>
+</html>
